@@ -1,6 +1,7 @@
 Markibles2::Application.routes.draw do
 
 
+  devise_for :users
   root 'welcome#index'
 
   resources :messages
