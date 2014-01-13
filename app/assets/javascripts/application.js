@@ -13,7 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(document).foundation({
+  orbit: {
+    animation: 'slide',
+    timer_speed: 5000,
+    pause_on_hover: true,
+    animation_speed: 600,
+    navigation_arrows: true,
+    bullets: false
+  }
+});
+
+var container = document.querySelector('#container');
+var msnry = new Masonry( container, {
+  // options
+  columnWidth: 200,
+  itemSelector: '.item'
+});
