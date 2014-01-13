@@ -7,12 +7,12 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @user = current_user
   end
 
   def create
-    # if is_seller?
     @product = Product.new(product_params)
-    @product = current_user
+    @product.user_id = current_user.id
       if @product.save
         flash[:notice]= 'You have added a product'
         redirect_to products_path
