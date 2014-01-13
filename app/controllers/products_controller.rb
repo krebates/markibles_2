@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   def create
     # if is_seller?
     @product = Product.new(product_params)
-    # @product.seller = current_user.seller
+    @product = current_user
       if @product.save
         flash[:notice]= 'You have added a product'
         redirect_to products_path
@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :food_photo, :description, :category_id, :seller_id, :price)
+    params.require(:product).permit(:name, :food_photo, :description, :user_id, :price)
   end
 
   # def is_seller?

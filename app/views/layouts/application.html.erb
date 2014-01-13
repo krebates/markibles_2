@@ -16,9 +16,7 @@
           <!-- Title Area -->
           <li class="name">
             <h1>
-              <a href="#">
-                Markibles
-              </a>
+              <%= link_to 'Markibles', root_path %>
             </h1>
           </li>
           <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
@@ -33,15 +31,13 @@
           </ul>
 
           <ul class="right">
-            <li class="search">
-              <form>
-                <input type="search">
-              </form>
-            </li>
-
-            <li class="has-button">
-              <a class="small button" href="#">Search</a>
-            </li>
+            <li><li class="active">
+              <%- if user_signed_in? -%>
+                <li class="active"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+              <%- else -%>
+                <li><%= link_to 'Sign In', new_user_session_path %></li>
+                <li><%= link_to 'Sign Up', new_user_registration_path %>
+              <%- end -%>
           </ul>
         </section>
       </nav>

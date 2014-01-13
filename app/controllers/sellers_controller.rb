@@ -10,30 +10,30 @@ class SellersController < ApplicationController
 
   def create
     @seller = Seller.new(seller_params)
-    # @seller.user = current_user
+    @seller.user = current_user
     if @seller.save
       flash[:notice]='You have created a store'
       redirect_to sellers_path
-    # else
-    #   flash[:notice]= 'Unable to make store'
+    else
+      flash[:notice]= 'Unable to make store'
     end
   end
 
   def edit
     @seller = Seller.find(params[:id])
-    # if current_user.id == @seller.user.id
-    # end
+    if current_user.id == @seller.user.id
+    end
   end
 
   def destroy
     @seller = Seller.find_by_id(params[:id])
-    # if is_seller?
+    if is_seller?
       if @seller.destroy
         redirect_to sellers_path
       else
         redirect_to root_path
       end
-    # end
+    end
   end
 
   def update
