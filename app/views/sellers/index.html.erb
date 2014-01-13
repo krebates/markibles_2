@@ -1,0 +1,10 @@
+<h1><%= link_to "Create a Store", new_seller_path %> <br/></h1> <hr>
+
+<% @sellers.each do |seller| %>
+  <h1><%= seller.name %></h1><br/><br/>
+  <h2><%= seller.store_website %></h2><br/><br/>
+  <%= link_to "Delete information", seller_path(seller), data: { confirm: "Are you sure?" }, method: :delete %><br/><br/>
+  <%= link_to "Edit information", edit_seller_path(seller) %><br/><br/>
+  <%= link_to "Show store", edit_seller_path(seller) %><br/><br/>
+  <hr>
+<% end %>

@@ -1,0 +1,12 @@
+<%= link_to "Create new category", new_category_path %> <br/> <hr><hr>
+
+<% @categories.each do |category| %>
+  Name: <%= category.name %><br/>
+
+<%= link_to "Delete information", category_path(category), data: { confirm: "Are you sure?" }, method: :delete %>
+
+<%= link_to "Edit information", edit_category_path(category) %>
+
+  <br/><hr><hr>
+
+<% end %>

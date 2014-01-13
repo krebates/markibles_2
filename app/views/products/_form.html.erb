@@ -1,0 +1,10 @@
+<div>
+  <%= simple_form_for @product do |f| %>
+    <%= f.input :name %>
+    <%= f.label :food_photo, "Food Item Photo" %>
+    <%= f.file_field :food_photo %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.submit 'Add food item.' %>
+  <% end %>
+</div>

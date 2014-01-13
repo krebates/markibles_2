@@ -7,6 +7,43 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="row">
+  <div class="large-12 columns">
+
+    <!-- Navigation -->
+      <nav class="top-bar">
+        <ul class="title-area">
+          <!-- Title Area -->
+          <li class="name">
+            <h1>
+              <a href="#">
+                Markibles
+              </a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <ul class="left">
+            <li><%= link_to "Find an item", products_path  %></li>
+            <li><%= link_to "Create a store", new_seller_path  %></li>
+            <li><%= link_to "List a Food Item!", new_product_path  %></li>
+          </ul>
+
+          <ul class="right">
+            <li class="search">
+              <form>
+                <input type="search">
+              </form>
+            </li>
+
+            <li class="has-button">
+              <a class="small button" href="#">Search</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
 
 <%= yield %>
 

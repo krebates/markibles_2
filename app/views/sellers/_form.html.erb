@@ -1,0 +1,9 @@
+<h1>Create a store</h1>
+<hr>
+
+<%= simple_form_for @seller do |f| %>
+  <%= f.input :name %>
+  <%= f.input :store_website, label: 'Store Website' %>
+  <%= f.submit 'Create my store!' %>
+<% end %>
+<hr>
