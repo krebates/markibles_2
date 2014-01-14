@@ -1,7 +1,10 @@
 <h5> Artisan: <%= @product.user.email %> </h5>
 
-    <%= @product.name %>
-    <%= image_tag @product.image_url.to_s %>
-    <%= @product.description %>
-    <%= @product.price %>
+  <h3>
+    <%= @product.name %><br/><br/>
+    <%= image_tag @product.image_url.to_s %><br/>
+    <%= @product.description %><br/>
+    <%= @product.price %><br/>
+  </h3>
+
 
