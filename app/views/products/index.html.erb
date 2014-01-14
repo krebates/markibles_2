@@ -1,5 +1,15 @@
 <h1>Food</h1>
+
+  <% if params[:user_id] %>
+    <h1>My Products</h1>
+      <%= link_to 'See All Items Available on Markibles', @link_path %>
+  <% else %>
+    <h1>Products Available on Markibles</h1>
+    <%= link_to 'My Items', @link_path %>
+  <% end %>
+
   <h5>
+
     <% @products.each do |product| %>
     Product <%= link_to "#{product.name}", product_path(product) %><br/><br/>
     <%= image_tag product.image_url.to_s %><br/>
@@ -8,5 +18,6 @@
     <%= product.user.email %><br>
     <% end %>
   </h5>
+
   <br/><br/>
   <hr>

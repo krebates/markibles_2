@@ -6,6 +6,6 @@ class Product < ActiveRecord::Base
   has_many :ratings, as: :ratable
   belongs_to :user
   validates_numericality_of :price
-  belongs_to :category
+  # belongs_to :category
   mount_uploader :image, ImageUploader
 end
