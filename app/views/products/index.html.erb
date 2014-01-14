@@ -7,17 +7,19 @@
     <h1>Products Available on Markibles</h1>
     <%= link_to 'My Items', @link_path %>
   <% end %>
+<hr/>
 
+<ul class="pricing-table">
   <h5>
-
     <% @products.each do |product| %>
     Product <%= link_to "#{product.name}", product_path(product) %><br/><br/>
     <%= image_tag product.image_url.to_s %><br/>
     <%= product.description %><br/>
     <%= product.price %><br/>
-    <%= product.user.email %><br>
+    <%= product.user.email %><br><hr>
     <% end %>
   </h5>
+</ul>
 
   <br/><br/>
-  <hr>
+
