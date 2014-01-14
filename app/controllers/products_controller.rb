@@ -24,8 +24,8 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    # if current_user.id == @product.user.id
-    # end
+    if current_user.id == @product.user.id
+    end
   end
 
   def destroy
@@ -37,6 +37,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    if current_user.id == @product.user.id
+    end
   end
 
 
