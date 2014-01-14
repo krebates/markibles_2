@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 
@@ -29,6 +30,8 @@ gem 'dotenv-rails'
 gem 'foundation-rails'
 
 gem 'carrierwave'
+
+gem 'rmagick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

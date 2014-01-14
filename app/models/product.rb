@@ -7,6 +7,5 @@ class Product < ActiveRecord::Base
   belongs_to :user
   validates_numericality_of :price
   belongs_to :category
-
-  # mount_uploader :food_photo, FoodPhotoUploader
+  mount_uploader :image, ImageUploader
 end

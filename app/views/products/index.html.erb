@@ -2,7 +2,7 @@
 
    <% @products.each do |product| %>
     Product <%= link_to "#{product.name}", product_path(product) %><br/><br/>
-    <%= product.photo %><br/>
+    <%= image_tag product.image_url.to_s %><br/>
     <%= product.description %><br/>
     <%= product.price %><br/>
     <%= product.user.email %><br>
