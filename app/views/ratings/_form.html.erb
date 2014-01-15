@@ -1,8 +1,8 @@
 <%= simple_form_for [@ratable, @rating] do |f| %>
-  <%= f.input :overall_rating %>
-  <%= f.input :flavor %>
-  <%= f.input :presentation %>
-  <%= f.input :additional_comments %>
+  <%= f.input :overall_rating, collection: 1..10 %>
+  <%= f.input :flavor, collection: 1..10 %>
+  <%= f.input :presentation, collection: 1..10 %>
+  <%= f.input :additional_comments, collection: 1..10 %>
   <%= f.submit 'Add Rating' %>
 <% end %>
 <hr>
