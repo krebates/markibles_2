@@ -1,0 +1,15 @@
+<%= simple_form_for [@ratable, @rating] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :store_website, label: 'Store Website' %>
+<%= overall_rating %>
+<%= flavor %>
+<%= presentation %>
+<%= additional_comments %>
+  <%= f.submit 'Create my store!' %>
+<% end %>
+<hr>
+
+
+user_id
+product_id
+seller_id

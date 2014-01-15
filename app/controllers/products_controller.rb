@@ -1,17 +1,17 @@
 class ProductsController < ApplicationController
-  # before_action :authorize_user, only: [:new, :create]
+  before_action :authorize_user, only: [:new, :create, :edit, :destroy, :show]
 
   # def index
   #   @products = Product.all
   # end
 
   def index
+    # if user_signed_in?
     if params[:user_id]
       @products = Product.where(user_id: params[:user_id])
       @link_path = products_path
     else
       @products = Product.all
-      @link_path = user_products_path(current_user)
     end
   end
 

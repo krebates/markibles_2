@@ -1,11 +1,11 @@
 <h1>Food</h1>
 
-  <% if params[:user_id] %>
+  <% if user_signed_in? %>
     <h1>My Products</h1>
-      <%= link_to 'See All Items Available on Markibles', @link_path %>
+      <%= link_to 'My Items', user_products_path(current_user) %>
   <% else %>
     <h1>Products Available on Markibles</h1>
-    <%= link_to 'My Items', @link_path %>
+    <%= link_to 'All Items', products_path %>
   <% end %>
 <hr/>
 
