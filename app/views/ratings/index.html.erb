@@ -1,0 +1,9 @@
+<h1>Ratings</h1>
+
+<div id="ratings">
+  <% @ratings.each do |rating| %>
+    <div class="rating">
+      <%= simple_format Rating.content %>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  belongs_to :ratable, polymorphic: true
 
   validates_presence_of :name
   validates_presence_of :description

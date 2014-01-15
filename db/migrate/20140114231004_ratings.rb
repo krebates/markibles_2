@@ -12,5 +12,6 @@ class Ratings < ActiveRecord::Migration
     t.string   :ratable_type
     t.timestamps
     end
+    add_index :ratings, [:ratable_id, :ratable_type]
   end
 end

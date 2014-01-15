@@ -32,14 +32,14 @@ ActiveRecord::Schema.define(version: 20140114231004) do
     t.integer  "overall_rating",      null: false
     t.integer  "flavor",              null: false
     t.integer  "presentation",        null: false
-    t.string   "additional comments"
+    t.string   "additional_comments"
     t.integer  "user_id"
     t.integer  "product_id"
     t.integer  "seller_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "ratable_id"
     t.string   "ratable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sellers", force: true do |t|

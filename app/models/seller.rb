@@ -1,5 +1,5 @@
 class Seller < ActiveRecord::Base
-
+  belongs_to :ratable, polymorphic: true
   belongs_to :user
   validates_uniqueness_of :user_id
 
