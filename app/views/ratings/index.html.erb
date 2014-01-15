@@ -2,10 +2,11 @@
 
 <div id="ratings">
   <% @ratings.each do |rating| %>
-    <div class="rating">
-      <%= simple_format Rating.content %>
-    </div>
-  <% end %>
+      <%= rating.overall_rating %>
+      <%= rating.flavor %>
+      <%= rating.presentation %>
+      <%= rating.additional_comments %>
+    <% end %>
 </div>
 
 <p><%= link_to "New Ratings", [:new, @ratable, :rating]%></p>

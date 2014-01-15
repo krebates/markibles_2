@@ -8,11 +8,11 @@ def index
 end
 
 def new
-  @rating = @ratable.rating.new
+  @rating = @ratable.ratings.new
 end
 
 def create
-  @rating = @ratable.ratings.new(params[:rating])
+  @rating = @ratable.ratings.new(rating_params)
   if @rating.save
     redirect_to [@ratable, :ratings], notice: "Rating created"
   else
@@ -31,5 +31,10 @@ private
     resource, id = request.path.split('/')[1,2]
     @ratable = resource.singularize.classify.constantize.find(id)
   end
+
+  def rating_params
+    params.require(:rating).permit(:overall_rating, :flavor, :presentation, :additional_comments, [:overall_rating, :flavor, :presentation, :additional_comments])
+  end
+
 end
 
