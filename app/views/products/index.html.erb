@@ -1,6 +1,7 @@
 <h1>Food</h1>
 
 <!-- shows products for a signed in user -->
+
   <% if user_signed_in? %>
     <h1>My Products</h1>
       <%= link_to 'My Items', user_products_path(current_user) %>
