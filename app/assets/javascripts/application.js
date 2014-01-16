@@ -13,9 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require masonry/jquery.masonry
 //= require_tree .
-
-$(function(){ $(document).foundation(); });
 
 $(document).foundation({
   orbit: {
@@ -28,9 +27,12 @@ $(document).foundation({
   }
 });
 
+$(function(){
 var container = document.querySelector('#container');
 var msnry = new Masonry( container, {
   // options
   columnWidth: 200,
   itemSelector: '.item'
+});
+$container.masonry( 'on', 'layoutComplete', function( msnryInstance, laidOutItems ) {} );
 });

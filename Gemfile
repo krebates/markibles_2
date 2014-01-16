@@ -35,6 +35,8 @@ gem 'rmagick'
 
 gem 'coveralls', require: false
 
+gem 'masonry-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 

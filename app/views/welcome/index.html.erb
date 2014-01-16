@@ -1,8 +1,7 @@
 <%= javascript_include_tag "application" %>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="js/jquery.min.js" type="text/javascript"></script>
-<script src="js/jquery.orbit.min.js" type="text/javascript"></script>
 
+<div id="container" class="js-masonry"
+  data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
 
     </div>
   </div>
@@ -17,7 +16,7 @@
 
       <!-- Main Banner Image - place in a paragraph to enforce the modular scale spacing -->
 
-    <ul class="example-orbit" data-orbit>
+    <!-- <ul class="example-orbit" data-orbit>
       <li>
         <img src="http://www.do-atlanta.com/wp-content/uploads/2013/12/cookies.jpg" />
         <div class="orbit-caption">
@@ -38,11 +37,8 @@
       </li>
     </ul>
   </div>
-
-
     <!-- End Desktop Slider -->
-
-  </div>
+    </div>
   </div><br>
 
   <div class="row">
@@ -50,39 +46,19 @@
       <div class="row">
 
     <!-- Thumbnails -->
-
-    <% @product_pics.each do |pic| %>
-      <%= image_tag pic %>
-    <% end %>
-
-<!--         <div class="large-3 small-6 columns">
-          <img src="http://www.whiskeddc.com/thumbs/Plum_Pie.jpg" />
-          <h6 class="panel">Pies</h6>
-        </div>
-
-        <div class="large-3 small-6 columns">
-          <img src="http://wallpoper.com/images/00/41/57/51/cakes_00415751.jpg" />
-          <h6 class="panel">Cakes</h6>
-        </div>
-
-        <div class="large-3 small-6 columns">
-          <img src="http://pixelatedcrumb.com/wp-content/uploads/2012/01/chocolate_turtle_cookies-5-1024x1024.jpg" />
-          <h6 class="panel">Cookies</h6>
-        </div>
-
-        <div class="large-3 small-9 columns">
-          <img src="http://www.cluckcluckdoo.com/wp-content/uploads/2013/01/MiniStrawberryPies3.jpg" />
-          <h6 class="panel">Other</h6>
-        </div> -->
+    <div id="container" class="js-masonry">
+      <!-- <div class='layoutComplete'> -->
+        <% @product_pics.each do |pic| %>
+        <div class='item'><%= image_tag pic %></div>
+        <% end %>
+      <!-- </div> -->
+    </div>
 
     <!-- End Thumbnails -->
 
       </div>
     </div>
   </div>
-
-
-
   <div class="row">
     <div class="large-12 columns">
       <div class="row">
@@ -156,4 +132,9 @@
         </div>
       </div>
     </div>
+
+<script src="/js/vendor/modernizr.js"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery.orbit.min.js" type="text/javascript"></script>
+<script src="assets/javascripts/masonry.pkgd.min.js"></script>
   </footer>
