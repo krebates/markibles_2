@@ -49,7 +49,7 @@
     <div id="container" class="js-masonry">
       <!-- <div class='layoutComplete'> -->
         <% @product_pics.each do |pic| %>
-        <div class='item'><%= image_tag pic %></div>
+        <div class='item'><%= link_to (image_tag pic.image), product_path(pic) %></div>
         <% end %>
       <!-- </div> -->
     </div>
