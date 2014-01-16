@@ -51,7 +51,11 @@
 
     <!-- Thumbnails -->
 
-        <div class="large-3 small-6 columns">
+    <% @product_pics.each do |pic| %>
+      <%= image_tag pic %>
+    <% end %>
+
+<!--         <div class="large-3 small-6 columns">
           <img src="http://www.whiskeddc.com/thumbs/Plum_Pie.jpg" />
           <h6 class="panel">Pies</h6>
         </div>
@@ -69,7 +73,7 @@
         <div class="large-3 small-9 columns">
           <img src="http://www.cluckcluckdoo.com/wp-content/uploads/2013/01/MiniStrawberryPies3.jpg" />
           <h6 class="panel">Other</h6>
-        </div>
+        </div> -->
 
     <!-- End Thumbnails -->
 
