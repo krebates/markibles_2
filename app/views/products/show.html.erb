@@ -1,8 +1,16 @@
 <br/><br/><br/>
+
+<p>
+  <%= link_to "New Ratings", new_product_rating_path(:product_id) %>
+
+<!--[:new, @ratable, :rating]-->
+
+</p>
+
 <h5> Artisan:
-  <%= @product.user.first_name %>
-  <%= @product.user.last_name %>
-  <%= @product.user.email %>
+  <%= @product.user.first_name %><br/>
+  <%= @product.user.last_name %><br/>
+  <%= @product.user.email %><br/>
 </h5>
 
   <h3><br/>
