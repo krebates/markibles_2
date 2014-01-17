@@ -20,12 +20,16 @@
     <%= @product.price %><br/>
   </h3>
 
+  Overall Rating: <%= @product.average_overall %><br/>
+  Overall Flavor:<%= @product.average_flavor %><br/>
+  Overall Presentation:<%= @product.average_presentation %></br>
+
   <h3>
-    <% @ratings.each do |rating| %>
+<% @ratings.each do |rating| %>
       <%= rating.overall_rating %><br/>
       <%= rating.flavor %><br/>
-      <%= rating.presentation %><br/>
-      <%= rating.additional_comments %><br/>
+      <%= rating.presentation %></br>
+    <%= rating.additional_comments %><br/>
     <% end %>
   </h3>
 

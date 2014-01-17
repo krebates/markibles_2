@@ -11,5 +11,35 @@ class Product < ActiveRecord::Base
   # belongs_to :category
   mount_uploader :image, ImageUploader
 
+    def average_overall
+    if ratings.count != 0
+      all_overall_ratings = []
+      ratings.each do |rating|
+        all_overall_ratings << rating.overall_rating
+      end
+      all_overall_ratings.inject { |sum, num| sum + num }.to_f / all_overall_ratings.size
+    end
+  end
+
+  def average_flavor
+    if ratings.count != 0
+      all_flavor_ratings = []
+      ratings.each do |rating|
+        all_flavor_ratings << rating.flavor
+      end
+      all_flavor_ratings.inject { |sum, num| sum + num }.to_f / all_flavor_ratings.size
+    end
+  end
+
+  def average_presentation
+    if ratings.count != 0
+      all_presentation_ratings = []
+      ratings.each do |rating|
+        all_presentation_ratings << rating.presentation
+      end
+      all_presentation_ratings.inject { |sum, num| sum + num }.to_f / all_presentation_ratings.size
+    end
+  end
+
 
 end
