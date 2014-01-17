@@ -14,7 +14,10 @@
 
   <h3>
     <% @ratings.each do |rating| %>
-      <%= rating.overall_rating %>
+      <%= rating.overall_rating %><br/>
+      <%= rating.flavor %><br/>
+      <%= rating.presentation %><br/>
+      <%= rating.additional_comments %><br/>
     <% end %>
   </h3>
 

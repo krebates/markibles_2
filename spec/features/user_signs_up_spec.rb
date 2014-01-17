@@ -10,10 +10,10 @@ feature 'user signs up', %Q{
 }
 
 scenario 'specifying valid and required information'
-  visit root_path
-  click_link 'Sign Up'
-  fill_in 'Email', with: 'user@example.com'
-  fill_in 'Passw'
+  # visit root_path
+  # click_link 'Sign Up'
+  # fill_in 'Email', with: 'user@example.com'
+  # fill_in 'Passw'
 
 scenario 'required information is not supplied'
 
