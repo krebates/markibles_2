@@ -16,17 +16,15 @@ feature 'signs up', %Q{
   scenario 'specifying valid and required information' do
       visit root_path
       click_link 'Sign Up'
-    # within("form#new_user") do
-      fill_in 'First name', with: 'Krystle'
-      fill_in 'Last name', with: 'Bates'
+
+      fill_in 'First Name', with: 'Krystle'
+      fill_in 'Last Name', with: 'Bates'
       fill_in 'Email', with: 'user@example.com'
       fill_in 'user_password', with: 'words12345'
-      fill_in 'Password confirmation', with: 'words12345'
+      fill_in 'Password Confirmation', with: 'words12345'
       click_button 'Sign up'
-    # end
 
-    expect(page).to have_content("You're In!")
-
+    expect(page).to have_content("See The Shops")
     expect(page).to have_content("Sign Out")
   end
 
@@ -42,11 +40,12 @@ feature 'signs up', %Q{
   scenario 'password confirmation does not match confirmation' do
     visit root_path
     click_link 'Sign Up'
-
+    fill_in 'First Name', with: 'Krystle'
+    fill_in 'Last Name', with: 'Bates'
     fill_in 'user_password', with: 'password'
-    fill_in 'Password confirmation', with: 'differentpassword'
+    fill_in 'Password Confirmation', with: 'differentpassword'
 
-    click_button 'Sign Up'
+    click_button 'Sign up'
 
     expect(page).to have_content("doesn't match")
     expect(page).to_not have_content("Sign Out")
