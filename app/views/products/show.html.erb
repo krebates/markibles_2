@@ -1,11 +1,21 @@
 <br/><br/><br/>
-<h5> Artisan: <%= @product.user.email %> </h5>
+<h5> Artisan:
+  <%= @product.user.first_name %>
+  <%= @product.user.last_name %>
+  <%= @product.user.email %>
+</h5>
 
   <h3><br/>
     <%= @product.name %><br/><br/>
     <%= image_tag @product.image_url.to_s %><br/>
     <%= @product.description %><br/>
     <%= @product.price %><br/>
+  </h3>
+
+  <h3>
+    <% @ratings.each do |rating| %>
+      <%= rating.overall_rating %>
+    <% end %>
   </h3>
 
 

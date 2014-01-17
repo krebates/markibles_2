@@ -47,6 +47,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @ratings = @product.ratings
     if current_user.id == @product.user.id
     end
   end
