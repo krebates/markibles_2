@@ -20,8 +20,6 @@ def create
   end
 end
 
-
-
 def show
 end
 
