@@ -14,18 +14,15 @@ feature 'signs up', %Q{
 
 
   scenario 'specifying valid and required information' do
-    visit root_path
-
-    click_link 'Sign Up'
+      visit root_path
+      click_link 'Sign Up'
     # within("form#new_user") do
-      fill_in 'Username', with: 'catdog'
-      fill_in 'First Name', with: 'Krystle'
-      fill_in 'Last Name', with: 'Bates'
+      fill_in 'First name', with: 'Krystle'
+      fill_in 'Last name', with: 'Bates'
       fill_in 'Email', with: 'user@example.com'
       fill_in 'user_password', with: 'words12345'
-      fill_in 'Password Confirmation', with: 'words12345'
-
-      click_button 'Sign Up'
+      fill_in 'Password confirmation', with: 'words12345'
+      click_button 'Sign up'
     # end
 
     expect(page).to have_content("You're In!")
@@ -36,7 +33,6 @@ feature 'signs up', %Q{
   scenario 'required information is not supplied' do
     visit root_path
     click_link 'Sign Up'
-    click_button 'Sign Up'
 
     expect(page).to have_content("can't be blank")
     expect(page).to_not have_content("Sign Out")
@@ -48,7 +44,7 @@ feature 'signs up', %Q{
     click_link 'Sign Up'
 
     fill_in 'user_password', with: 'password'
-    fill_in 'Password Confirmation', with: 'differentpassword'
+    fill_in 'Password confirmation', with: 'differentpassword'
 
     click_button 'Sign Up'
 
