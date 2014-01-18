@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :ratings
   has_one :seller
   has_many :products
-
+  has_many :messages
 
 
 end
