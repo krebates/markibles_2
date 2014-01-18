@@ -33,17 +33,22 @@ feature 'user adds a food item' do
 
   end
 
-  # scenario 'user creates an account missing mandatory description field' do
-  #   user = FactoryGirl.create(:user)
-  #     visit root_path
-  #     click_on "List a Food Item!"
-  #     fill_in name "Sweet Cake"
-  #     fill_in photo "pic"
-  #     fill_in price 5
-  #     click_on "Add item"
+  scenario 'user creates an account missing mandatory description field' do
+    current_user = FactoryGirl.create(:user)
+      visit root_path
+      click_link 'Sign In'
+      fill_in 'Email', with: current_user.email
+      fill_in 'Password', with: current_user.password
+      click_button 'Sign In'
 
-  #     expect(page).to have_content "Bourbon Cake"
-  #     expect(page).to have_content "Sweet sweet goodness"
+      click_on "List a Food Item"
+      product = FactoryGirl.build(:product)
+      product.user_id = current_user.id
+      fill_in 'Description', with: product.description
+      fill_in 'Price', with: product.price
+      click_button 'Add food item'
 
-  # end
+      expect(page).to have_content "can't be blank"
+
+  end
 end
