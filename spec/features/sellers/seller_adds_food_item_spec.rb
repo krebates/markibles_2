@@ -10,37 +10,32 @@ require 'spec_helper'
 feature 'seller adds a food item' do
 
   scenario 'user creates an account successfully' do
-    category = FactoryGirl.create(:category)
       visit root_path
+      click_on "Sign Up"
+      user = FactoryGirl.create(:user)
+      click_on "Sign Up"
+      save_and_open_page
       click_on "List a Food Item!"
       product = FactoryGirl.create(:product)
-      fill_in "Photo", with: "Photo"
-      select  "Cake", from: "Category"
       click_on "Add item"
 
       expect(page).to have_content "Bourbon Cake"
       expect(page).to have_content "Sweet sweet goodness"
       expect(page).to have_content "girliename"
-    end
+
   end
 
   scenario 'user creates an account missing mandatory description field' do
-    category = FactoryGirl.create(:category)
+    user = FactoryGirl.create(:user)
       visit root_path
       click_on "List a Food Item!"
       fill_in name "Sweet Cake"
       fill_in photo "pic"
       fill_in price 5
-      fill_in "Photo", with: "Photo"
-      select  "Cake", from: "Category"
       click_on "Add item"
 
       expect(page).to have_content "Bourbon Cake"
       expect(page).to have_content "Sweet sweet goodness"
-    end
+
   end
-
-
-
-
 end
