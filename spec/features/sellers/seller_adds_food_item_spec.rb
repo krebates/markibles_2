@@ -20,7 +20,6 @@ feature 'user adds a food item' do
       click_on "List a Food Item"
       product = FactoryGirl.build(:product)
       product.user_id = current_user.id
-      save_and_open_page
       fill_in 'Name', with: product.name
       fill_in 'Description', with: product.description
       fill_in 'Price', with: product.price
