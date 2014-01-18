@@ -12,7 +12,7 @@ FactoryGirl.define do
     end
   end
 
-  factory :user_with_stores do
+  # factory :user_with_stores do
 
 
 
