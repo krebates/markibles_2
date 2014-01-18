@@ -12,11 +12,12 @@ module Features
     end
 
     def sign_in
-      FactoryGirl.create(:user)
-      visit sign_in_path
+      user = FactoryGirl.create(:user)
+      visit root_path
+      click_link 'Sign In'
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
-      click_button 'Sign Isn'
+      click_button 'Sign In'
     end
   end
 end

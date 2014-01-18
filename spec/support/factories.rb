@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :user do
-    sequence(:email) {|n| "person#{n}@example.com" }
+    # sequence(:email) {|n| "person#{n}@example.com" }
     first_name  'Krystle'
     last_name   'Bates'
-    # email       'krebates@gmail.com'
+    email       'krebates@gmail.com'
     password    'password'
     password_confirmation 'password'
 
@@ -13,8 +13,6 @@ FactoryGirl.define do
   end
 
   # factory :user_with_stores do
-
-
 
   factory :seller do
     name "Baker's Name"
