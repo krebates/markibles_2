@@ -11,6 +11,7 @@ As a registered user,
 # If I provide an email and password that matches the database with previously registered and confirmed account, I am granted access to the system where I can buy or sell food items.
 # If I don't specify all the required information, I can't access the system where I can buy or sell food items.
 
+
   scenario 'an existing user specifies a valid email and password' do
     user = FactoryGirl.create(:user)
     visit root_path

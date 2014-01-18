@@ -6,10 +6,14 @@ FactoryGirl.define do
     # email       'krebates@gmail.com'
     password    'password'
     password_confirmation 'password'
+
+    factory :user_with_store do
+      after(:create) {|user| FactoryGirl.create(:seller, user: user)}
+    end
   end
-    # factory :user_with_store do
-    #   after(:create) {|user| FactoryGirl.create(:seller, user: user)}
-    # end
+
+  factory :user_with_stores do
+
 
 
   factory :seller do

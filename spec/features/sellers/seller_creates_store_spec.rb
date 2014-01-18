@@ -9,12 +9,16 @@ require 'spec_helper'
 # I must include a photo for my profile.
 
 feature 'user creates a store to sell items' do
-  let(:user) {FactoryGirl.create(:user_with_store)}
+
 
   scenario 'user completes form will all valid fields' do
     # you dont have a signed in user for the test
-    sign_in_as user
+
     visit root_path
+    click_on 'Sign In'
+    FactoryGirl.create(:user)
+    save_and_open_page
+    click_on 'Sign In'
     click_on 'Create a store'
     fill_in "Name", with: "Sweet Shop"
     fill_in "Store Website", with: "www.sweetshop.com"
@@ -32,36 +36,36 @@ feature 'user creates a store to sell items' do
 
   # end
 
-  scenario 'user creates a store after they already have one' do
-    seller = FactoryGirl.create(:seller)
-    visit root_path
-    click_on 'Create a store'
-    fill_in "Name", with: "Baker's Name"
-    fill_in "Store Website", with: "www.bakersite.com"
+  # scenario 'user creates a store after they already have one' do
+  #   seller = FactoryGirl.create(:seller)
+  #   visit root_path
+  #   click_on 'Create a store'
+  #   fill_in "Name", with: "Baker's Name"
+  #   fill_in "Store Website", with: "www.bakersite.com"
 
-    expect(page).to have_content("Unable to make store")
-  end
+  #   expect(page).to have_content("Unable to make store")
+  # end
 
-   scenario 'user edit store' do
-    # user = FactoryGirl.create(:user)
-    # seller = FactoryGirl.create(:seller, user: user)
-    sign_in_as user
-    visit sellers_path
-    click_on "Edit"
-    fill_in "Name", with: "Princess Cupcakes"
-    click_on "Create my store!"
+  #  scenario 'user edit store' do
+  #   # user = FactoryGirl.create(:user)
+  #   # seller = FactoryGirl.create(:seller, user: user)
+  #   sign_in_as user
+  #   visit sellers_path
+  #   click_on "Edit"
+  #   fill_in "Name", with: "Princess Cupcakes"
+  #   click_on "Create my store!"
 
-    expect(page).to have_content "Princess Cupcakes"
-  end
+  #   expect(page).to have_content "Princess Cupcakes"
+  # end
 
-  scenario 'user deletes store' do
-    sign_in_as user
+  # scenario 'user deletes store' do
+  #   sign_in_as user
 
-    visit sellers_path
-    click_on "Delete information"
+  #   visit sellers_path
+  #   click_on "Delete information"
 
-    expect(page).not_to have_content user.seller.name
-  end
+  #   expect(page).not_to have_content user.seller.name
+  # end
 
 end
 
