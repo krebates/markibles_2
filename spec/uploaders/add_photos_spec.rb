@@ -14,9 +14,9 @@ describe ImageUploader do
     Rails.root.join('spec/file_fixtures/valid_food_image.png')
   end
 
-  before do
-    ImagineUploader.enable_processing = true
-  end
+  # before do
+  #   ImagineUploader.enable_processing = true
+  # end
 
   after do
     ImagineUploader.enable_processing = false
