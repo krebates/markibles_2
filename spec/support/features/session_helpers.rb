@@ -19,6 +19,17 @@ module Features
       fill_in 'Password', with: user.password
       click_button 'Sign In'
     end
+
+    def add_product
+      click_on "List a Food Item"
+      product = FactoryGirl.create(:product)
+      fill_in 'Name', with: product.name
+      fill_in 'Description', with: product.description
+      fill_in 'Price', with: product.price
+
+      click_link 'Add food item.'
+
+    end
   end
 end
 

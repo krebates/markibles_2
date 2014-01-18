@@ -7,21 +7,18 @@ FactoryGirl.define do
     password    'password'
     password_confirmation 'password'
 
-    factory :user_with_store do
-      after(:create) {|user| FactoryGirl.create(:seller, user: user)}
-    end
+    # factory :user_with_store do
+    #   after(:create) {|user| FactoryGirl.create(:seller, user: user)}
+    # end
   end
 
-  # factory :user_with_stores do
+  # factory :seller do
+  #   name "Baker's Name"
+  #   store_website "www.bakersite.com"
+  # end
 
-  factory :seller do
-    name "Baker's Name"
-    store_website "www.bakersite.com"
-  end
-
-  factory :products do
+  factory :product do
     name "Sweet Cake"
-    photo "pic"
     description "It's tasty"
     price 5
   end
