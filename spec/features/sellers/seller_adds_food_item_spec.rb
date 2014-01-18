@@ -13,9 +13,8 @@ feature 'seller adds a food item' do
       visit root_path
       click_on "Sign Up"
       user = FactoryGirl.create(:user)
-      click_on "Sign Up"
       save_and_open_page
-      click_on "List a Food Item!"
+      click_on "List a Food Item"
       product = FactoryGirl.create(:product)
       click_on "Add item"
 
