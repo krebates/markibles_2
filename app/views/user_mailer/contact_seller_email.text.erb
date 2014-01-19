@@ -1,11 +1,7 @@
-UserMailer#contact_seller_email
 
 <%= @greeting %>,
 
-<br><br>
+<%= @text %>
 
-<%= @text %>,
-
-Sincerely,
-
-<%= "#{@user.first_name} #{@user.last_name}" %>
+This email was sent from:
+<%= @user.email %>

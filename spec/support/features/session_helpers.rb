@@ -22,7 +22,7 @@ module Features
 
     def add_product
       click_on "List a Food Item"
-      product = FactoryGirl.create(:product)
+      product = FactoryGirl.build(:product, name: "Better cake")
       # product.user_id = user.id
       fill_in 'Name', with: product.name
       fill_in 'Description', with: product.description

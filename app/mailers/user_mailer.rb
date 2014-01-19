@@ -5,10 +5,11 @@ class UserMailer < ActionMailer::Base
     @user = message_content.user
     @greeting = "Hi"
     @product_owner = message_content.user
+    @text = message_content.text
 
     mail to: @product_owner.email,
     from: @user.email,
-    subject: @subject,
-    text: @text
+    subject: message_content.subject,
+    text: message_content.text
   end
 end
