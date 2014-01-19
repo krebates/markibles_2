@@ -3,8 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def contact_seller_email(message_content)
     @user = message_content.user
-    @greeting = "Hi"
-    @product_owner = message_content.user
+    @product_owner = @product.user
     @text = message_content.text
 
     mail to: @product_owner.email,
