@@ -12,6 +12,8 @@ As a registered user,
 # If I don't specify all the required information, I can't access the system where I can buy or sell food items.
 
   scenario 'an existing user specifies a valid email and password' do
+    sign_up
+    click_link 'Sign Out'
     sign_in
 
     expect(page).to have_content('Sign Out')
@@ -49,7 +51,7 @@ As a registered user,
   #   expect(page).to_not have_content('Sign In')
 
   #   visit new_user_session_path
-  #   save_and_open_page
+  #
   #   expect(page).to have_content("You are already signed in.")
   # end
 end

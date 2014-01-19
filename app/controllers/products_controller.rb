@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+  class ProductsController < ApplicationController
   before_action :current_user, only: [:new, :create, :edit, :destroy, :show]
 
   # def index

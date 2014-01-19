@@ -1,12 +1,10 @@
 <h1>Contact Me!</h1>
 <hr>
 
-<%= simple_form_for @message do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
+<%= simple_form_for [@product, @message] do |f| %>
   <%= f.input :subject %>
   <%= f.input :text %>
   <%= f.submit 'Send My Message!' %>
+
 <% end %>
 <hr>

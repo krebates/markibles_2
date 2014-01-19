@@ -11,6 +11,7 @@
   <%= @product.user.first_name %><br/>
   <%= @product.user.last_name %><br/>
   <%= @product.user.email %><br/>
+  <%= link_to "Contact me", new_product_message_path(@product) %>
 </h5>
 
   <h3><br/>
@@ -25,10 +26,10 @@
   Overall Presentation:<%= @product.average_presentation %></br>
 
   <h3>
-<% @ratings.each do |rating| %>
-      <%= rating.overall_rating %><br/>
-      <%= rating.flavor %><br/>
-      <%= rating.presentation %></br>
+  <% @ratings.each do |rating| %>
+    <%= rating.overall_rating %><br/>
+    <%= rating.flavor %><br/>
+    <%= rating.presentation %></br>
     <%= rating.additional_comments %><br/>
     <% end %>
   </h3>

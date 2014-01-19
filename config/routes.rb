@@ -10,13 +10,13 @@ root 'welcome#index'
 
   resources :products do
     resources :ratings
+    resources :messages
   end
 
   resources :sellers do
     resources :ratings
   end
 
-  resources :messages
   resources :about_markibles
   resources :products
   # resources :categories

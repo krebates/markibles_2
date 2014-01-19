@@ -1,7 +1,11 @@
 UserMailer#contact_seller_email
 
-<%= @greeting %>, <%= @contact_form.text %>,
+<%= @greeting %>,
+
+<br><br>
+
+<%= @text %>,
 
 Sincerely,
 
-<%= "#{@contact_form.first_name} #{@contact_form.last_name}" %>
+<%= "#{@user.first_name} #{@user.last_name}" %>
