@@ -14,7 +14,7 @@ end
 def create
   @rating = @ratable.ratings.new(rating_params)
   if @rating.save
-    redirect_to [@ratable, :ratings], notice: "Rating created"
+    redirect_to root_path #[@ratable, :ratings], notice: "Rating created"
   else
     render :new
   end

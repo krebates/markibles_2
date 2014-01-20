@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Markibles</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="row">
+  <div class="large-12 columns">
+
+    <!-- Navigation -->
+      <nav class="top-bar">
+        <ul class="title-area">
+          <!-- Title Area -->
+          <li class="name">
+            <h1>
+              <%= link_to 'Markibles', root_path %>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon"></li>
+        </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <%- if user_signed_in? -%>
+            <li><%= link_to "Create a store", new_seller_path  %></li>
+            <li><%= link_to "List a Food Item!", new_product_path  %></li>
+            <li><%= link_to "Find an item", products_path  %></li>
+            <li><%= link_to "See The Shops", sellers_path  %></li>
+          <%- else -%>
+            <li><%= link_to "See the Edibles", products_path  %></li>
+          <%- end -%>
+        </ul>
+
+        <ul class="right">
+          <li>
+            <li class="active">
+            <%- if user_signed_in? -%>
+              <li class="active"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <%- else -%>
+              <li><%= link_to 'Sign In', new_user_session_path %></li>
+              <li><%= link_to 'Sign Up', new_user_registration_path %>
+            <%- end -%>
+          </ul>
+        </section>
+      </nav>
+
+<%= yield %>
+
+
+    <!-- Footer -->
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<script src="/js/vendor/modernizr.js"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery.orbit.min.js" type="text/javascript"></script>
+<script src="assets/javascripts/masonry.pkgd.min.js"></script>
+  </footer>
+
+</body>
+</html>

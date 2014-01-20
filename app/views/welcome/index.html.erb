@@ -46,12 +46,12 @@
       <div class="row">
 
     <!-- Thumbnails -->
-    <div id="container" class="js-masonry">
+     <div id="container" class="js-masonry">
       <!-- <div class='layoutComplete'> -->
         <% @product_pics.each do |pic| %>
-        <div class='item'><%= image_tag pic %></div>
+        <div class='item'><%= link_to (image_tag pic.image), product_path(pic) %></div>
         <% end %>
-      </div>
+      <!-- </div> -->
     </div>
 
     <!-- End Thumbnails -->
@@ -65,53 +65,22 @@
 
     <!-- Content -->
 
-        <div class="large-8 columns">
+        <div class="large-12 columns">
           <div class="panel radius">
 
           <div class="row">
-          <div class="large-6 small-6 columns">
+          <div class="large-12 small-12 columns">
 
-            <h4>Header</h4><hr/>
-            <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
+            <h4>Welcome to Markibles</h4><hr/>
+            <h5 class="subheader">The site designed to connect artisans with food lovers.
             </h5>
-
-          <div class="show-for-small" align="center">
-            <a href="#" class="small radius button">Call To Action!</a><br>
-
-            <a href="#" class="small radius button">Call To Action!</a>
-          </div>
-
-          </div>
-          <div class="large-6 small-6 columns">
-
-            <p>Suspendisse ultrices ornare tempor. Aenean eget ultricies libero. Phasellus non ipsum eros. Vivamus at dignissim massa. Aenean dolor libero, blandit quis interdum et, malesuada nec ligula. Nullam erat erat, eleifend sed pulvinar ac. Suspendisse ultrices ornare tempor. Aenean eget ultricies libero.
+            <p>Do you find yourself dreaming of chocolate cake when you sleep? Do you crave white chocolate oatmeal cookies, but never know where to buy them? Do you make an award-winning pastry but find yourself surrounded but people on diets and do not appreciate the value of a delicious heavenly treats baked in an oven? If so, we understand.
           </p>
         </div>
-
-        </div>
-        </div>
-        </div>
-
-          <div class="large-4 columns hide-for-small">
-
-          <h4>Get In Touch!</h4><hr/>
-
-          <a class="large button expand" href="#">
-            Call To Action!
-          </a>
-
-          <a class="large button expand" href="#">
-            Call To Action!
-          </a>
-
-
-        </div>
-
-    <!-- End Content -->
-
       </div>
     </div>
   </div>
+  <!-- End Content -->
 
     <!-- Footer -->
 
