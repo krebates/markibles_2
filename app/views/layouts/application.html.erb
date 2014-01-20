@@ -27,10 +27,7 @@
             <%- if user_signed_in? -%>
               <li><%= link_to "Create a store", new_seller_path  %></li>
               <li><%= link_to "List a Food Item!", new_product_path  %></li>
-              <li><%= link_to "Find an item", products_path  %></li>
               <li><%= link_to "See The Shops", sellers_path  %></li>
-            <%- else -%>
-              <li><%= link_to "See the Edibles", products_path  %></li>
             <%- end -%>
           </ul>
 
