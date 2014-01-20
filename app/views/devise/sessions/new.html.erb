@@ -1,6 +1,6 @@
 <h2>Sign in</h2>
 
-<form>
+
   <div class="large-7 columns">
     <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -15,7 +15,6 @@
       <% end %>
   </div>
 
-
 <%= render "devise/shared/links" %>
 
-</form>
+
