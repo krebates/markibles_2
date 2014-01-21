@@ -20,7 +20,9 @@
  *= require_tree .
 */
 
-
+#column-width-demo2 .grid-sizer { width: 20%; }
+#column-width-demo2 .item { width: 20%; }
+#column-width-demo2 .item.w2 { width: 40%; }
 
   .item { width: 30%; }
   .item.w2 { width: 30%; }
