@@ -39,14 +39,9 @@
   end
 
   def destroy
-    if current_user.id == @product.user.id
     @product = Product.find_by_id(params[:id])
     @product.destroy
       redirect_to products_path
-    else
-      flash[:notice]= 'This is not your product'
-      redirect_to products_path
-    end
   end
 
   def show
