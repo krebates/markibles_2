@@ -33,6 +33,13 @@
     <%= rating.additional_comments %><br/>
     <% end %>
   </h3>
+<br/>
+
+
+<br/>
+  <% if current_user.id == @product.user.id %>
+  <%= link_to "Delete information", product_path(@product), data: { confirm: "Are you sure?" }, method: :delete %>
+<% end %>
 
 
 
