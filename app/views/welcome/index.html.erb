@@ -1,12 +1,12 @@
 <%= javascript_include_tag "application" %>
 
-<div id="container" class="js-masonry"
+<!-- <div id="container" class="js-masonry"
   data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
-</div>
+</div> -->
 
 <!-- Photos On Front Page -->
 
-<div id="container" class="js-masonry">
+<div id="container" class="js-masonry" data-masonry-options='{  "itemSelector": ".item"}'>
 
 <!-- <div class='layoutComplete'> -->
   <%- if user_signed_in? -%>

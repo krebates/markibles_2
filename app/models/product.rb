@@ -18,6 +18,8 @@ class Product < ActiveRecord::Base
         all_overall_ratings << rating.overall_rating
       end
       all_overall_ratings.inject { |sum, num| sum + num }.to_f / all_overall_ratings.size
+    else
+      'N/A'
     end
   end
 
@@ -28,6 +30,8 @@ class Product < ActiveRecord::Base
         all_flavor_ratings << rating.flavor
       end
       all_flavor_ratings.inject { |sum, num| sum + num }.to_f / all_flavor_ratings.size
+      else
+      'N/A'
     end
   end
 
@@ -38,6 +42,8 @@ class Product < ActiveRecord::Base
         all_presentation_ratings << rating.presentation
       end
       all_presentation_ratings.inject { |sum, num| sum + num }.to_f / all_presentation_ratings.size
+      else
+      'N/A'
     end
   end
 

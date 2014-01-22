@@ -1,0 +1,25 @@
+.product-heading{
+  .panel{
+    padding: 0.5em;
+  }
+}
+
+.home-nav{
+  .columns{
+    padding: 0;
+  }
+}
+
+.item { width: 33%; }
+
+@media (min-width: 501px) and (max-width: 1000px){
+  .item{
+    width: 49%;
+  }
+}
+
+@media (max-width: 500px){
+  .item{
+    width: 100%;
+  }
+}
