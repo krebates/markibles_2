@@ -1,24 +1,3 @@
-<!--[:new, @ratable, :rating]-->
-<% if false %>
-<div class="large-6 columns">
-  <h3><br/>
-    <%= @product.name %><br/><br/>
-    <%= image_tag @product.image_url.to_s %><br/>
-    <%= @product.description %><br/>
-    <%= @product.price %><br/>
-  </h3>
-</div>
-
-<div class="large-6 columns">
-  <h5> Artisan:
-    <%= @product.user.first_name %><br/>
-    <%= @product.user.last_name %><br/>
-    <%= @product.user.email %><br/>
-    <%= link_to "Contact me", new_product_message_path(@product) %>
-  </h5>
-</div>
-<% end %>
-
 <div class="row product-heading">
   <div class="large-12">
     <h3 class='subheader panel'><%= @product.name %> <small>by <%= @product.user.full_name %> </h3>
@@ -32,15 +11,25 @@
     <h3><%= @product.price %></h3>
   </div>
   <div class="large-6 columns">
-    <h4>Overall Rating <%= @product.average_overall %></h4>
-    <h4>Overall Flavor:<%= @product.average_flavor %></h4>
-    <h4>Overall Presentation:<%= @product.average_presentation %></h4>
+    <h4>Overall Rating: <%= @product.average_overall %></h4>
+    <h4>Overall Flavor: <%= @product.average_flavor %></h4>
+    <h4>Overall Presentation: <%= @product.average_presentation %></h4>
+    <h1>Contact Me!</h1>
+    <hr>
+
+    <%= simple_form_for [@product, @message] do |f| %>
+      <%= f.input :subject %>
+      <%= f.input :text %>
+      <%= f.submit 'Send My Message!' %>
+
+    <% end %>
+    <hr>
   </div>
 
 
   <h5>
       <% if current_user.id == @product.user.id %>
-      <div class="button [radius round]"
+
       <%= link_to "Delete My Product", product_path(@product), data: { confirm: "Are you sure?" }, method: :delete %>
     <% end %>
   </h5>
@@ -53,6 +42,14 @@
     <%= link_to "New Ratings", new_product_rating_path(@product) %>
   </p>
 </div>
+
+
+  <h5> Artisan:
+    <%= @product.user.first_name %><br/>
+    <%= @product.user.last_name %><br/>
+    <%= @product.user.email %><br/>
+    <%= link_to "Contact me", new_product_message_path(@product) %>
+  </h5>
 
 <div class="large-3 columns">
   <h5>

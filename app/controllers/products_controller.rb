@@ -46,6 +46,7 @@
 
   def show
     @product = Product.find(params[:id])
+    @message = @product.messages.build
     @ratings = @product.ratings
     if current_user.id == @product.user.id
     end

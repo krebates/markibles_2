@@ -7,11 +7,12 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @message.product = Product.find(params[:product_id])
     @message.user = current_user
 
     if @message.save
       UserMailer.contact_seller_email(@message).deliver
-      redirect_to root_path, notice: 'Your email is sent! Thank You!'
+      redirect_to :back, notice: 'Your email is sent! Thank You!'
     else
       render :new
     end

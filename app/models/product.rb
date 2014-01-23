@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   validates_presence_of :description
   validates_presence_of :price
   has_many :ratings, as: :ratable
+  has_many :messages
   belongs_to :user
   belongs_to :seller
   validates_numericality_of :price
@@ -50,5 +51,8 @@ class Product < ActiveRecord::Base
     end
   end
 
+  def currency_convert
+    "$ #{price}"
+  end
 
 end

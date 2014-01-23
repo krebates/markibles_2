@@ -10,7 +10,7 @@ root 'welcome#index'
 
   resources :products do
     resources :ratings
-    resources :messages
+    resources :messages, only: [:create, :new]
   end
 
   resources :sellers do
