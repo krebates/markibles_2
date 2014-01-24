@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
        average_overall =all_overall_ratings.inject { |sum, num| sum + num }.to_f / all_overall_ratings.size
        average_overall.round
     else
-      'N/A'
+      'Item not rated yet'
     end
   end
 
@@ -34,7 +34,7 @@ class Product < ActiveRecord::Base
       all_flavor_ratings = all_flavor_ratings.inject { |sum, num| sum + num }.to_f / all_flavor_ratings.size
       all_flavor_ratings.round
       else
-      'N/A'
+      'Item not rated yet'
     end
   end
 
@@ -47,12 +47,13 @@ class Product < ActiveRecord::Base
       all_presentation_ratings = all_presentation_ratings.inject { |sum, num| sum + num }.to_f / all_presentation_ratings.size
       all_presentation_ratings.round
       else
-      'N/A'
+      'Item not rated yet'
     end
   end
 
   def currency_convert
-    "$ #{price}"
+    price.to_s[/^\d+\.\d{2}/].to_f
+
   end
 
 end
