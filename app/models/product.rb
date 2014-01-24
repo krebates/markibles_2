@@ -52,7 +52,7 @@ class Product < ActiveRecord::Base
   end
 
   def currency_convert(price)
-    price = sprintf("$%.2f",price)
+    price = "$#{sprintf("%.2f",price)}"
+    price
   end
-
 end

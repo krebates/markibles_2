@@ -4,18 +4,21 @@
 
   <% if user_signed_in? %>
     <h1>My Products</h1>
-      <%= link_to 'My Items', user_products_path(current_user) %>
-        <ul class="pricing-table">
+      <%= link_to 'My Items', user_products_path(current_user), class:"button" %>
+
           <h5>
             <% @products.each do |product| %>
             Product <%= link_to "#{product.name}", product_path(product) %><br/><br/>
-            <%= image_tag product.image_url.to_s %><br/>
+
+              <%= image_tag product.image_url.to_s, class:"th" %><br/>
+              <br/>
+
             <%= product.description %><br/>
             <%= product.price %><br/>
             <%= product.user.email if product.user %><br><hr>
             <% end %>
           </h5>
-        </ul>
+
       <% else %>
 
 
@@ -24,7 +27,7 @@
 
     <h1>Products Available on Markibles</h1>
   <%= link_to 'All Items', products_path %>
-<ul class="pricing-table">
+
   <h5>
     <% @products.each do |product| %>
     Product <% product.name %><br/><br/>
@@ -34,7 +37,7 @@
     <%= product.user.email if product.user %><br><hr>
     <% end %>
   </h5>
-</ul>
+
 
   <br/><br/>
 
@@ -43,6 +46,6 @@
 
 
   <% end %>
-<hr/>
+
 
 
