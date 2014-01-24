@@ -13,12 +13,9 @@
     <h5><%= @product.price %></h5>
   </div>
   <div class="large-5 columns">
-    <h4>Overall Rating: </h4>
-      <h5><%= @product.average_overall %></h5>
-    <h4>Overall Flavor: </h4>
-      <h5><%= @product.average_flavor %></h5>
-    <h4>Overall Presentation: </h4>
-      <h5><%= @product.average_presentation %></h5>
+    <h4>Overall Rating: <%= @product.average_overall %></h4>
+    <h4>Overall Flavor: <%= @product.average_flavor %></h4>
+    <h4>Overall Presentation: <%= @product.average_presentation %></h4>
     <br>
   <p>
       <%= link_to "Click Here To Rate This Item", new_product_rating_path(@product), class: "button" %>
@@ -41,7 +38,7 @@
     <%= simple_form_for [@product, @message] do |f| %>
       <%= f.input :subject %>
       <%= f.input :text %>
-      <%= f.submit 'Send My Message To The Artisan' %>
+      <%= f.submit 'Send My Message To The Artisan', class: "button"%>
     <% end %>
     <hr>
 
@@ -55,6 +52,7 @@
 <div class="large-12 columns">
   <h5>
   <% @ratings.each do |rating| %><br/>
+    <%= rating.user %>
     Overall Rating: <%= rating.overall_rating %><br/>
     Overall Flavor: <%= rating.flavor %><br/>
     Overall Presentation: <%= rating.presentation %></br>

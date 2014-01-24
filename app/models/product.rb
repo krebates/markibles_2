@@ -51,9 +51,8 @@ class Product < ActiveRecord::Base
     end
   end
 
-  def currency_convert
-    price.to_s[/^\d+\.\d{2}/].to_f
-
+  def currency_convert(price)
+    price = sprintf("$%.2f",price)
   end
 
 end
