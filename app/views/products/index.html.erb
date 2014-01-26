@@ -10,7 +10,7 @@
             <% @products.each do |product| %>
             Product <%= link_to "#{product.name}", product_path(product) %><br/><br/>
 
-              <%= image_tag product.image_url.to_s, class:"th" %><br/>
+              <%= image_tag product.image_url(:thumb) %><br/>
               <br/>
 
             <%= product.description %><br/>
