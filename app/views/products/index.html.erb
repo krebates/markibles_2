@@ -1,21 +1,18 @@
-<h1>Food</h1>
+<h1>List of All Markible Items</h1>
 
 <!-- shows products for a signed in user -->
 
   <% if user_signed_in? %>
-    <h1>My Products</h1>
       <%= link_to 'My Items', user_products_path(current_user), class:"button" %>
 
           <h5>
             <% @products.each do |product| %>
             Product <%= link_to "#{product.name}", product_path(product) %><br/><br/>
 
-              <%= image_tag product.image_url(:thumb) %><br/>
-              <br/>
-
-            <%= product.description %><br/>
-            <%= product.price %><br/>
-            <%= product.user.email if product.user %><br><hr>
+            <%= image_tag product.image_url(:thumb) %><br/>
+            Description: <%= product.description %><br/>
+            Price: <%= product.currency_converter%><br/>
+            Contact Info: <%= product.user.email if product.user %><br><hr>
             <% end %>
           </h5>
 
