@@ -9,16 +9,13 @@
             <% @products.each do |product| %>
             Product <%= link_to "#{product.name}", product_path(product) %><br/><br/>
 
-            <%= image_tag product.image_url(:thumb) %><br/>
+            <%= image_tag product.image_url(:thumb), class:"th" %><br/>
             Description: <%= product.description %><br/>
             Price: <%= product.currency_converter%><br/>
             Contact Info: <%= product.user.email if product.user %><br><hr>
             <% end %>
           </h5>
-
       <% else %>
-
-
 
       <!-- shows products for a non-signed in user -->
 
