@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="row">
-  <div class="large-12">
+  <div class="contain-to-grid">
     <!-- Navigation -->
       <nav class="top-bar">
         <ul class="title-area">
@@ -26,7 +26,10 @@
             <%- if user_signed_in? -%>
               <li class="has-form">
                 <li>
-                  <%= link_to "List a Food Item!", new_product_path  %>
+                  <%= link_to "List a Food Item", new_product_path  %>
+                </li>
+                <li>
+                <%= link_to "See All Items", products_path  %>
                 </li>
               </li>
             <%- end -%>

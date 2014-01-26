@@ -12,17 +12,18 @@
   <%- if user_signed_in? -%>
     <% @product_pics.each do |pic| %>
       <div class='item'>
-        <%= link_to (image_tag pic.image), product_path(pic) %>
+        <%= link_to (image_tag pic.image), product_path(pic)%>
       </div>
         <% end %>
       <%- else -%>
         <% @product_pics.each do |pic| %>
-      <div class='item'><%= image_tag pic.image %></div>
+      <div class='item'><%= image_tag pic.image %>
+      </div>
         <% end %>
-  <% end %>
+      <% end %>
       <!-- </div> -->
       </div>
-</div>
+    </div>
 
     <!-- End Thumbnails -->
     <!-- Content -->

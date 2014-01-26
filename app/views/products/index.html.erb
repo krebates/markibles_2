@@ -2,7 +2,8 @@
 
 <!-- shows products for a signed in user -->
 
-  <% if user_signed_in? %>
+
+    <% if user_signed_in? %>
       <%= link_to 'My Items', user_products_path(current_user), class:"button" %>
 
           <h5>
@@ -19,20 +20,18 @@
 
       <!-- shows products for a non-signed in user -->
 
-    <h1>Products Available on Markibles</h1>
+<h1>Products Available on Markibles</h1>
   <%= link_to 'All Items', products_path %>
 
-  <h5>
-    <% @products.each do |product| %>
-    Product <% product.name %><br/><br/>
-    <%= image_tag product.image_url.to_s %><br/>
-    <%= product.description %><br/>
-    <%= product.price %><br/>
-    <%= product.user.email if product.user %><br><hr>
-    <% end %>
-  </h5>
-
-
+      <h5>
+        <% @products.each do |product| %>
+        Product <% product.name %><br/><br/>
+        <%= image_tag product.image_url.to_s %><br/>
+        <%= product.description %><br/>
+        <%= product.price %><br/>
+        <%= product.user.email if product.user %><br><hr>
+        <% end %>
+      </h5>
   <br/><br/>
 
 
