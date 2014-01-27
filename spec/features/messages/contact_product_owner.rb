@@ -17,6 +17,7 @@ so that I can ask a question} do
     # user = FactoryGirl.build(:user)
     # user2 = FactoryGirl.build(:user)
     sign_up
+    sign_in
     add_product
     click_link 'Sign Out'
 

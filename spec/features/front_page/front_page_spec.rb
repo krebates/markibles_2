@@ -11,11 +11,6 @@ feature 'front_page', %Q{
 # I should see an area that allows me to to create an new account.
 # I should see an area that will allow me to log-in.
 
-  scenario 'button for user to select to learn more about the website' do
-    visit root_path
-    find_link('About Markibles').visible?
-  end
-
   scenario 'button for use to create a new account' do
     visit root_path
     find_link('Sign Up').visible?
