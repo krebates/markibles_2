@@ -25,6 +25,10 @@
     <% if current_user.id == @product.user.id %>
     <%= link_to "Delete My Product", product_path(@product), data: { confirm: "Are you sure?" }, method: :delete %>
     <% end %>
+    <br>
+    <% if current_user.id == @product.user.id %>
+    <%= link_to "Edit My Product", edit_product_path(@product) %>
+    <% end %>
   </h5>
 </div>
 </div>
