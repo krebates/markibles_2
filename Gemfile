@@ -1,6 +1,4 @@
-
 source 'https://rubygems.org'
-
 
 group :test, :development do
     gem 'factory_girl_rails'
@@ -36,6 +34,8 @@ gem 'rmagick'
 gem 'coveralls', require: false
 
 gem 'masonry-rails'
+
+gem 'fog'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

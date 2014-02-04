@@ -1,38 +1,73 @@
-<br/><br/><br/>
+<div class="row product-heading">
+  <div class="large-12">
+    <h3 class='subheader panel'><%= @product.name %> <small>by <%= @product.user.full_name %> </h3>
+  </div>
+</div>
 
-<p>
-  <%= link_to "New Ratings", new_product_rating_path(@product) %>
+<div class="row">
+  <div class="large-6 columns">
+    <%= image_tag @product.image_url.to_s %>
+    <h3>Description:</h3>
+    <h5><%= @product.description %></h5>
+    <h3>Price:</h3>
+    <h5><%= "#{@product.currency_converter}" %></h5>
+  </div>
+  <div class="large-5 columns">
+    <h4>Overall Rating: <%= @product.average_overall %></h4>
+    <h4>Overall Flavor: <%= @product.average_flavor %></h4>
+    <h4>Overall Presentation: <%= @product.average_presentation %></h4>
+    <br>
+  <p>
+      <%= link_to "Click Here To Rate This Item", new_product_rating_path(@product), class: "button" %>
+  </p>
 
-<!--[:new, @ratable, :rating]-->
-
-</p>
-
-<h5> Artisan:
-  <%= @product.user.first_name %><br/>
-  <%= @product.user.last_name %><br/>
-  <%= @product.user.email %><br/>
-  <%= link_to "Contact me", new_product_message_path(@product) %>
-</h5>
-
-  <h3><br/>
-    <%= @product.name %><br/><br/>
-    <%= image_tag @product.image_url.to_s %><br/>
-    <%= @product.description %><br/>
-    <%= @product.price %><br/>
-  </h3>
-
-  Overall Rating: <%= @product.average_overall %><br/>
-  Overall Flavor:<%= @product.average_flavor %><br/>
-  Overall Presentation:<%= @product.average_presentation %></br>
-
-  <h3>
-  <% @ratings.each do |rating| %>
-    <%= rating.overall_rating %><br/>
-    <%= rating.flavor %><br/>
-    <%= rating.presentation %></br>
-    <%= rating.additional_comments %><br/>
+  <h5>
+    <% if current_user.id == @product.user.id %>
+    <%= link_to "Delete My Product", product_path(@product), data: { confirm: "Are you sure?" }, method: :delete %>
     <% end %>
-  </h3>
+    <br>
+    <% if current_user.id == @product.user.id %>
+    <%= link_to "Edit My Product", edit_product_path(@product) %>
+    <% end %>
+  </h5>
+</div>
+</div>
+
+  <div class='subheader panel'>
+    <h1>Contact Me</h1><hr>
+     <h3> Artisan:</h3>
+    <h5>
+    <%= "#{@product.user.first_name} #{@product.user.last_name}" %><br/><br/>
+    </h5>
+    <%= simple_form_for [@product, @message] do |f| %>
+      <%= f.input :subject %>
+      <%= f.input :text %>
+      <%= f.submit 'Send My Message To The Artisan', class: "button"%>
+    <% end %>
+    <hr>
+  </div>
+
+<div class="large-12 columns">
+  <h3>Reviews From Other Markibles Users</h3>
+
+<div class="large-12 columns">
+  <h5>
+  <% @ratings.each do |rating| %><br/>
+    <%= rating.user %>
+    Overall Rating: <%= rating.overall_rating %><br/>
+    Overall Flavor: <%= rating.flavor %><br/>
+    Overall Presentation: <%= rating.presentation %></br>
+    Additional Comments: <%= rating.additional_comments %><br/>
+    <% end %>
+  </h5><br/>
+</div>
+
+
+
+
+
+
+
 
 
 

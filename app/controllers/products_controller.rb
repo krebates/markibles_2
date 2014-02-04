@@ -40,13 +40,13 @@
 
   def destroy
     @product = Product.find_by_id(params[:id])
-    if @product.destroy
+    @product.destroy
       redirect_to products_path
-    end
   end
 
   def show
     @product = Product.find(params[:id])
+    @message = @product.messages.build
     @ratings = @product.ratings
     if current_user.id == @product.user.id
     end

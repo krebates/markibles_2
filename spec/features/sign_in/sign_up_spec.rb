@@ -15,8 +15,8 @@ feature 'signs up', %Q{
 
   scenario 'specifying valid and required information' do
     sign_up
-
-    expect(page).to have_content("See The Shops")
+    expect(page).to have_content("See All Items")
+    expect(page).to have_content("List a Food Item")
     expect(page).to have_content("Sign Out")
   end
 

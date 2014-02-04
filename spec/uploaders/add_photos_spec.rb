@@ -18,9 +18,9 @@ describe ImageUploader do
   #   ImagineUploader.enable_processing = true
   # end
 
-  after do
-    ImagineUploader.enable_processing = false
-  end
+  # after do
+  #   ImagineUploader.enable_processing = false
+  # end
 
   it 'stores without error' do
     expect(lambda { uploader.store!(File.open(path)) }).to_not raise_error

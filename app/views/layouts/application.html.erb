@@ -2,14 +2,13 @@
 <html>
 <head>
   <title>Markibles</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= stylesheet_link_tag  "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="row">
-  <div class="large-12 columns">
-
+  <div class="contain-to-grid">
     <!-- Navigation -->
       <nav class="top-bar">
         <ul class="title-area">
@@ -25,12 +24,14 @@
         <section class="top-bar-section">
           <ul class="left">
             <%- if user_signed_in? -%>
-              <li><%= link_to "Create a store", new_seller_path  %></li>
-              <li><%= link_to "List a Food Item!", new_product_path  %></li>
-              <li><%= link_to "Find an item", products_path  %></li>
-              <li><%= link_to "See The Shops", sellers_path  %></li>
-            <%- else -%>
-              <li><%= link_to "See the Edibles", products_path  %></li>
+              <li class="has-form">
+                <li>
+                  <%= link_to "List a Food Item", new_product_path  %>
+                </li>
+                <li>
+                <%= link_to "See All Items", products_path  %>
+                </li>
+              </li>
             <%- end -%>
           </ul>
 
@@ -45,8 +46,12 @@
           </ul>
         </section>
       </nav>
+    </div>
+  </div>
 
+<div class='row'>
 <%= yield %>
+</div>
 
 </body>
 </html>
