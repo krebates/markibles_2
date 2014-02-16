@@ -19,6 +19,8 @@ group :test, :development do
     gem 'rails_12factor'
   end
 
+gem 'acts-as-taggable-on'
+
 gem 'simple_form'
 
 gem 'devise'
