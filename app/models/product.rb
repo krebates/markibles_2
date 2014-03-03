@@ -11,7 +11,6 @@ class Product < ActiveRecord::Base
   validates_numericality_of :price
   # belongs_to :category
   mount_uploader :image, ImageUploader
-  acts_as_taggable :flavor, :types
 
     def average_overall
     if ratings.count != 0
